@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+}
+
+label{
+    position: relative;
+    height: 60px;
+    top: 200px;
+    width: 120px;
+    background: #000000;
+    border-radius: 15px;
+}
+
+label input{
+    appearance: none;
+}
+
+label span{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+    background: #68036b;
+    border: 6px solid #6b41d6;
+    border-radius: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+label input:checked ~ span{
+    left: 60px;
+}
+
+.bulb{
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 348px;
+    height: 355px;
+    pointer-events: none;
+    background: url(bulb-off.jpg);
+    transition: 0.5s;
+}
+
+label input:checked ~ .bulb{
+    background: url(bulb-on.jpg);
+}
+
+label text{
+    position: absolute;
+    left: -120px;
+    color: rgb(244, 4, 4);
+    font-size: 3em;
+    filter: drop-shadow(0 0 15px #f00)
+    drop-shadow(0 0 35px #f00);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: 1.5s;
+}
+
+label text:last-child{
+    position: absolute;
+    left: initial;
+    right: -100px;
+    color: #f9f7f7;
+    filter: none;
+}
+
+label input:checked ~ text{
+    color: #f5f0f0;
+    filter: none;
+}
+
+label input:checked ~ text:last-child{
+    color: #0f0;
+    filter: drop-shadow(0 0 15px #0f0)
+    drop-shadow(0 0 35px #0f0);
+}
